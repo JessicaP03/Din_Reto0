@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
  * @author poker
  */
 public class ModelFactory {
+    
     public ModelInterface getModel(){
     ModelInterface model = null;
     String dato = ResourceBundle.getBundle("application.Config").getString("model_type");

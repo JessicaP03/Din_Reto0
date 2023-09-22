@@ -16,30 +16,30 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
  *
  * @author poker
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController  {
     
     @FXML
-    private Label label;
+    private Label idLabel;
     
      private static final Logger LOGGER = Logger.getLogger(Controller.class.getName());
     private Stage stage;
     
+    private String greeting;
+   
+    //private String message;
     @FXML
-    private TextField idText;
+    private Pane idPane;
+
     
-    private String message;
       
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+   
     
     public void initStage(Parent root) {
               
@@ -51,12 +51,19 @@ public class FXMLDocumentController implements Initializable {
         
         stage.setTitle("Saludo");
         stage.setResizable(false);
-        idText.setText(message);
+        idLabel.setVisible(true);
+        idLabel.setText(greeting);
+        //System.out.println(message);
+    
+        stage.show();
      }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        public void setGreeting(String greeting){
+        this.greeting=greeting;
+    }
+    
+    public void setStage(Stage stage) {
+        this.stage=stage;
     }
         
     

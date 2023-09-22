@@ -22,7 +22,7 @@ public class ViewFactory {
         }
         
         if(dato.equalsIgnoreCase("javafx")){
-           //view = new ViewImplementation();
+           view = new JavaFXViewImplementation();
         }
         return view;
     }

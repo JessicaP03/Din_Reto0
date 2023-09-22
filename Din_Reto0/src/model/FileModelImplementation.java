@@ -16,7 +16,7 @@ public class FileModelImplementation implements ModelInterface{
     @Override
     public String getGreet() {
         
-        String greeting = ResourceBundle.getBundle("Model.Greet").getString("message");
+        String greeting = ResourceBundle.getBundle("model.Greet").getString("greet");
         
         return greeting;
 

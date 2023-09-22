@@ -71,7 +71,7 @@ public class BDModelImplementation implements ModelInterface {
      * la base de datos
      */
     public BDModelImplementation() {
-        this.archivoConfig = ResourceBundle.getBundle("Model.BDconnect");
+        this.archivoConfig = ResourceBundle.getBundle("model.BDConnect");
         this.url = archivoConfig.getString("Conn");
         this.usuario = archivoConfig.getString("BDuser");
         this.contraseña = archivoConfig.getString("BDPass");
