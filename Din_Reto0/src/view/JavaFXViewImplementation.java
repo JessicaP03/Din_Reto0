@@ -12,13 +12,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author poker
+ * Implementación de la vista por javafx
+ * @author Gonzalo y Jessica
  */
 public class JavaFXViewImplementation extends Application implements ViewInterface{
 
   private static String greeting;
   
+  /**
+   * Metodo para inicializar la ventana y pasarle el saludo al controlador
+   * @param primaryStage stage
+   * @throws Exception Excepcion
+   */
     @Override
     public void start(Stage primaryStage) throws Exception {
        // System.out.println(greeting);

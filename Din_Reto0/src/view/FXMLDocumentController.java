@@ -20,8 +20,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
- *
- * @author poker
+ * Controaldor de la ventana FXMLDocument
+ * @author Gonzalo y Jessica
  */
 public class FXMLDocumentController  {
     
@@ -39,7 +39,10 @@ public class FXMLDocumentController  {
 
     
       
-   
+   /**
+    * Metodo para inicializar la ventana con el mensaje
+    * @param root  root
+    */
     
     public void initStage(Parent root) {
               
@@ -53,7 +56,7 @@ public class FXMLDocumentController  {
         stage.setResizable(false);
         idLabel.setVisible(true);
         idLabel.setText(greeting);
-        //System.out.println(message);
+       
     
         stage.show();
      }

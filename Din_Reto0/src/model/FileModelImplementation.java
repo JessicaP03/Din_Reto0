@@ -9,10 +9,14 @@ import java.util.ResourceBundle;
 
 /**
  * Implementacion del modelo para leer el archivo
- * @author 
+ * @author Gonzalo y Jessica
  */
 public class FileModelImplementation implements ModelInterface{
 
+    /**
+     * Metodo para recoger el saludo del archivo
+     * @return greeting
+     */
     @Override
     public String getGreet() {
         

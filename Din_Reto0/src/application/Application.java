@@ -20,8 +20,8 @@ import model.ModelFactory;
 import view.ViewFactory;
 
 /**
- *
- * @author poker
+ * Clase aplicación
+ * @author Gonzalo y Jessica
  */
 public class Application {
 
@@ -29,6 +29,7 @@ public class Application {
 
     /**
      * @param args the command line arguments
+     * @throws BDException Excepcion 
      */
     public static void main(String[] args) throws BDException {
         String Dato = ResourceBundle.getBundle("application.Config").getString("view_type");

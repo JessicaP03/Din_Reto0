@@ -9,10 +9,14 @@ import java.util.ResourceBundle;
 
 /**
  * Factoria de la vista
- * @author 
+ * @author Gonzalo y Jessica
  */
 public class ViewFactory {
     
+    /**
+     * Metodo para leer el archivo de propiedades y devuelve el tipo del vista
+     * @return view
+     */
     public ViewInterface getView(){
         ViewInterface view = null;
         String dato = ResourceBundle.getBundle("application.Config").getString("view_type");

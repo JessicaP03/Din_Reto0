@@ -9,10 +9,15 @@ import java.util.ResourceBundle;
 
 
 /**
- *
- * @author poker
+ * Factoria del modelo
+ * @author Gonzalo y Jessica
  */
 public class ModelFactory {
+    
+    /**
+     * Metodo para leer el archivo de propiedades y devuelve el tipo del modelo
+     * @return model
+     */
     
     public ModelInterface getModel(){
     ModelInterface model = null;

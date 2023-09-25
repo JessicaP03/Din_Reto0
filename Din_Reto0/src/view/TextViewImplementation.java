@@ -6,12 +6,16 @@
 package view;
 
 /**
- * Implementación de la vista 
- * @author 
- * @param message
+ * Implementación de la vista por texto
+ * @author Gonzalo y Jessica
  */
+
 public class TextViewImplementation implements ViewInterface{
 
+    /**
+     * Imprime por consola el saludo
+     * @param message mensaje de texto
+     */
     @Override
     public void showGreet(String message) {
         System.out.println(message);

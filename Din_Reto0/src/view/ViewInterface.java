@@ -7,7 +7,7 @@ package view;
 
 /**
  * Interface de la vista
- * @author 
+ * @author Gonzalo y Jessica
  */
 public interface ViewInterface {
     

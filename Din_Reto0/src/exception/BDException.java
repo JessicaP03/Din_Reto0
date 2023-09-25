@@ -6,8 +6,8 @@
 package exception;
 
 /**
- *
- * @author poker
+ * Clase de excepción
+ * @author Gonzalo y Jessica
  */
 public class BDException extends Exception{
     public BDException (String message){

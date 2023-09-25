@@ -17,8 +17,8 @@ import model.ModelInterface;
 import view.ViewInterface;
 
 /**
- *
- * @author poker
+ * Controlador de la aplicación
+ * @author Gonzalo y Jessica
  */
 public class Controller {
   
@@ -26,7 +26,12 @@ public class Controller {
     private static final Logger LOGGER = Logger.getLogger(Controller.class.getName());
     
    
-    
+ /**
+  * Metodo run para ejecutar ¡
+  * @param view vista
+  * @param model modelo
+  * @throws BDException Excepcion de database
+  */
     public void run(ViewInterface view, ModelInterface model) throws BDException{
        
            view.showGreet(model.getGreet());
