@@ -18,60 +18,56 @@ import java.util.logging.Logger;
 /**
  * Implementacion del modelo para leer desde la DB
  *
- * @author
+ * @author Gonzalo y Jessica
  */
 public class BDModelImplementation implements ModelInterface {
 
-  
-   
-        /**
-         * prepara la conexion
-         */
+    /**
+     * Prepara la conexion
+     */
     private Connection conex;
 
     /**
-     * prepara la sentencia
+     * Prepara la sentencia
      */
     private PreparedStatement stmt;
 
     /**
-     * lee el archivo de configuracion
+     * Lee el archivo de configuracion
      */
     private ResourceBundle archivoConfig;
 
     /**
-     * url para conectarse a la base de datos
+     * Url para conectarse a la base de datos
      */
     private String url;
 
     /**
-     * usuario para conectarse a la base de datos
+     * Usuario para conectarse a la base de datos
      */
     private String usuario;
 
     /**
-     * contraseña para conectarse a la base de datos
+     * Contraseña para conectarse a la base de datos
      */
     private String contraseña;
 
     /**
-     *
-     * driver para conectarse a la base de datos
+     * Driver para conectarse a la base de datos
      */
     private String driver;
 
     /**
-     *
-     * selecciona el saludo
+     * Selecciona el saludo
      */
     private final String getGreeting = "SELECT message from greet";
 
     /**
-     * constructor en el que se agragan los datos necesarios para conectarse a
+     * Constructor en el que se agragan los datos necesarios para conectarse a
      * la base de datos
      */
     public BDModelImplementation() {
-        this.archivoConfig = ResourceBundle.getBundle("Model.BDconnect");
+        this.archivoConfig = ResourceBundle.getBundle("model.BDConnect");
         this.url = archivoConfig.getString("Conn");
         this.usuario = archivoConfig.getString("BDuser");
         this.contraseña = archivoConfig.getString("BDPass");
@@ -79,10 +75,9 @@ public class BDModelImplementation implements ModelInterface {
     }
 
     /**
-     * abre la conexion con la base de datos
+     * Abre la conexion con la base de datos
      *
-     * @throws ClassNotFoundException
-     * @throws exception.BDException
+     * @throws ClassNotFoundException Excepcion
      * @throws BDException Excepcion para cuanto intentas conectar con la BD
      */
     public void openConnection() throws ClassNotFoundException, BDException {
@@ -95,41 +90,47 @@ public class BDModelImplementation implements ModelInterface {
         }
     }
 
+    /**
+     * Metodo para recoger el saludo desde la database
+     * @return saludo
+     * @throws BDException Excepcion
+     */
+    
     @Override
     public String getGreet() throws BDException {
-         
+
         ResultSet rs = null;
         String saludo = "";
-        
-        
+
         try {
-              this.openConnection();
+            this.openConnection();
             stmt = conex.prepareStatement(getGreeting); //Logger.getLogger(BdModelImplementation.class.getName()).log(Level.SEVERE, null, ex);
             rs = stmt.executeQuery();
-             if(rs.next()){
-            saludo = rs.getString(1);
-            this.closeConnection();
-        }
+            if (rs.next()) {
+                saludo = rs.getString(1);
+                this.closeConnection();
+            }
         } catch (SQLException ex) {
             Logger.getLogger(BDModelImplementation.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BDModelImplementation.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return saludo;
-      
-        
-    
+
     }
-    
-     public void closeConnection() throws SQLException{
-        if(conex != null){
+
+    /**
+     * Metodo para cerrar la conexión con la database
+     * @throws SQLException Excepcion de SQL
+     */
+    public void closeConnection() throws SQLException {
+        if (conex != null) {
             conex.close();
         }
-        if(stmt !=null){
+        if (stmt != null) {
             conex.close();
         }
-        
 
     }
 

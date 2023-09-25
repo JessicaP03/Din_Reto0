@@ -8,8 +8,8 @@ package model;
 import exception.BDException;
 
 /**
- *
- * @author poker
+ * Interface del modelo
+ * @author Gonzalo y Jessica
  */
 public interface ModelInterface{
     
